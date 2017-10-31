@@ -1,0 +1,20 @@
+QLabel {
+    background-color: rgb(254, 202, 123);
+    border-style: solid;
+    border-radius: 6px;
+    text-align: center;
+}
+
+
+QFrame{
+    background-color: rgb(237,224,200);
+    border-style: solid;
+    border-radius:6px;
+}
+
+QMainWindow{
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius:6px;
+}
+
