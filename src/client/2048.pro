@@ -30,13 +30,16 @@ SOURCES += main.cpp\
     box.cpp \
     game.cpp \
     console/console.cpp \
-    GUI/mainwindow.cpp
+    GUI/mainwindow.cpp \
+    database.cpp
 
 HEADERS  += box.h \
     definition.h \
     game.h \
     console/console.h \
-    GUI/mainwindow.h
+    GUI/mainwindow.h \
+    database.h \
+    ../sqlite3.h
 
 FORMS    += mainwindow.ui
 

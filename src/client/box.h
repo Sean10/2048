@@ -18,6 +18,7 @@ public:
     explicit Box(QObject *parent = 0);
     ~Box();
     bool IsFull();
+    bool IsNoAnswer();
     bool IsSequentialEliminate();
     void DataLeft();
     void DataRight();
@@ -31,6 +32,7 @@ public:
 private:
     int dat_[16];
     int score_;
+    int best_score_;
     int count_eliminate;
 
 

@@ -15,39 +15,36 @@ Console::Console()
     while(true)
     {
         GetKeyOperation();
+        JudgeGameOver();
         Print();
+
     }
 
 }
 
 void Console::Init()
 {
+    is_game_over = false;
     cout << "欢迎使用2048" << endl;
     cout << "自动开启新游戏" << endl;
     game->NewGame();
     Print();
+    cout << "欢迎使用2048" << endl;
+    cout << "自动开启新游戏" << endl;
+    cout << "上下左右使用WSAD,需要随时敲回车" << endl;
+
 }
 
-//void Console::keyPressEvent(QKeyEvent *e)
-//{
-//    switch(e->key())
-//    {
-//    case Qt::Key_Up:
-//        game->OperationUp();
-//        break;
-//    case Qt::Key_Down:
-//        game->OperationDown();
-//        break;
-//    case Qt::Key_Left:
-//        game->OpeartionLeft();
-//        break;
-//    case Qt::Key_Right:
-//        game->OperationRight();
-//        break;
-//    default:
-//        DEBUG("key");
-//    }
-//}
+/**
+ *  @brief 判断是否游戏无解，判断似乎需要用栈进行判断是否接下来存在有解？
+ *  @param 无
+ *  @retval 无
+ */
+void Console::JudgeGameOver()
+{
+    if(game->IsGameOverAndNewRandom())
+        is_game_over = true;
+}
 
 void Console::GetKeyOperation()
 {
@@ -65,6 +62,9 @@ void Console::GetKeyOperation()
     case 'd':
         game->OperationRight();
         break;
+    case '1':
+        game->NewGame();
+        break;
     default:
         DEBUG("console key");
     }
@@ -80,4 +80,11 @@ void Console::Print()
             cout << endl;
     }
     cout << "score:" << game->box->GetScore() << endl;
+    cout << "best score:" << endl;
+    cout << "输入1重新开始游戏" << endl;
+    if(is_game_over)
+    {
+        cout << "You lose !!!" << endl;
+        is_game_over = false;
+    }
 }

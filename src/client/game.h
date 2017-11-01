@@ -21,7 +21,8 @@ public:
     void OpeartionLeft();
     void OperationRight();
     void NewGame();
-    bool AddNewRandom();
+    bool IsGameOverAndNewRandom();
+    void Quit();
     Box *box;
 };
 

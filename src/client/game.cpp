@@ -21,37 +21,42 @@ void Game::NewGame()
     box->SetRandomNums();
 }
 
-bool Game::AddNewRandom()
+bool Game::IsGameOverAndNewRandom()
 {
-    if(box->IsFull() == false)
+    if(box->IsFull() == false || box->IsNoAnswer() == false)
     {
         box->SetRandomNums();
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }
+
 
 void Game::OpeartionLeft()
 {
     box->DataLeft();
-    AddNewRandom();
+    //IsGameOverAndNewRandom();
 }
 
 void Game::OperationDown()
 {
     box->DataDown();
-    AddNewRandom();
+    //IsGameOverAndNewRandom();
 }
 
 void Game::OperationRight()
 {
     box->DataRight();
-    AddNewRandom();
+    //IsGameOverAndNewRandom();
 }
 
 void Game::OperationUp()
 {
     box->DataUp();
-    AddNewRandom();
+    //IsGameOverAndNewRandom();
 }
 
+void Game::Quit()
+{
+    ;
+}

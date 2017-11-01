@@ -11,6 +11,10 @@ Box::Box(QObject *parent) : QObject(parent)
     for(int i = 0; i < 16; i++)
         dat_[i] = 0;
     score_ = 0;
+    // 这里要写存储游戏记录的内容
+    if(true)
+        best_score_ = 0;
+
 
     qsrand(NULL);
 }
@@ -47,7 +51,7 @@ void Box::DataDown()
     QList<int> tmp[4];
     for(int col = 0; col < 4; col++)
     {
-        for(int row = 3; row > 0; row--)
+        for(int row = 3; row >= 0; row--)
         {
             if(dat_[row*4+col])
             {
@@ -253,6 +257,24 @@ bool Box::IsFull()
 
 }
 
+bool Box::IsNoAnswer()
+{
+    for(int i = 0;i < 4; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            if(dat_[i*4+j] == dat_[i*4+j+1]);
+                return false;
+        }
+    }
+
+    for(int i = 0; i < 3;i++)
+        for(int j = 0; j < 4;j++)
+            if(dat_[i*4+j] == dat_[(i+1)*4+j])
+                return false;
+    return true;
+}
+
 int Box::GetData(const int i)
 {
     return dat_[i];
@@ -268,4 +290,5 @@ void Box::ClearBox()
 {
     for(int i = 0;i < 16;i++)
         dat_[i] = 0;
+    score_ = 0;
 }

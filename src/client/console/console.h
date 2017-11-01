@@ -20,12 +20,12 @@ public:
     void Init();
     void Print();
     void GetKeyOperation();
+    void JudgeGameOver();
 
-protected:
-    //void keyPressEvent(QKeyEvent *e);
 
 private:
     Game *game;
+    bool is_game_over;
 };
 
 #endif // CONSOLE_H
