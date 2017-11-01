@@ -27,16 +27,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     box.cpp \
     game.cpp \
-    console.cpp
+    console/console.cpp \
+    GUI/mainwindow.cpp
 
-HEADERS  += mainwindow.h \
-    box.h \
+HEADERS  += box.h \
     definition.h \
     game.h \
-    console.h
+    console/console.h \
+    GUI/mainwindow.h
 
 FORMS    += mainwindow.ui
 
