@@ -9,6 +9,12 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QTextStream>
+#include <QLabel>
+#include <QKeyEvent>
+#include "game.h"
+
+class Game;
+
 
 namespace Ui {
 class MainWindow;
@@ -24,9 +30,15 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    Game *game_;
+    bool is_game_over_;
 
     void InitQSS();
     void InitWidget();
+    void SetLabelWidget(const int i, QLabel *tmp);
+    void SetLabelWidgetAll();
+    void keyPressEvent(QKeyEvent *event);
+
 };
 
 #endif // MAINWINDOW_H

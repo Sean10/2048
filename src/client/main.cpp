@@ -27,11 +27,10 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //MainWindow w;
-    //Game *game = new Game;
-    Console *console = new Console;
+    MainWindow w;
+    //Console *console = new Console;
 
-    //w.show();
+    w.show();
 
     return a.exec();
 }

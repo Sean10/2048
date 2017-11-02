@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
@@ -24,7 +27,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-color: rgb(187, 173, 161);
+border-radius:15px;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -35,8 +39,8 @@
     <widget class="QWidget" name="gridLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>9</x>
-       <y>9</y>
+       <x>10</x>
+       <y>10</y>
        <width>361</width>
        <height>361</height>
       </rect>
@@ -44,116 +48,273 @@
      <layout class="QGridLayout" name="gridLayout">
       <item row="1" column="0">
        <widget class="QLabel" name="label5_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="0" column="3">
        <widget class="QLabel" name="label4_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QLabel" name="label2_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="0" column="2">
        <widget class="QLabel" name="label3_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
        <widget class="QLabel" name="label7_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="1" column="3">
        <widget class="QLabel" name="label8_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label9_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
        <widget class="QLabel" name="label6_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label1_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label10_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
        <widget class="QLabel" name="label11_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="2" column="2">
        <widget class="QLabel" name="label12_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="2" column="3">
        <widget class="QLabel" name="label13_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
        <widget class="QLabel" name="label14_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="3" column="2">
        <widget class="QLabel" name="label15_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item row="3" column="3">
        <widget class="QLabel" name="label16_">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:15px;
+font: 75 18pt &quot;Source Code Pro&quot;;</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -168,6 +329,12 @@
       <width>101</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -186,21 +353,37 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>score:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLabel" name="labelScore">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(245, 145, 49);
+border-radius:15px;</string>
+        </property>
         <property name="text">
          <string>TextLabel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>10</y>
+      <width>38</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>score:</string>
+    </property>
    </widget>
   </widget>
  </widget>

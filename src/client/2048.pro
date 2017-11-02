@@ -4,10 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += gui
+QT -= core
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-CONFIG += console
+# CONFIG += console
 CONFIG += -std=c++11 -D _DEBUG
 
 TARGET = 2048
