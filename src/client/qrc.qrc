@@ -2,4 +2,8 @@
     <qresource prefix="/qss">
         <file>style.qss</file>
     </qresource>
+    <qresource prefix="/img">
+        <file>img/2048.ico</file>
+        <file>img/2048.png</file>
+    </qresource>
 </RCC>

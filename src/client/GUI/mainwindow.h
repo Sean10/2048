@@ -11,6 +11,7 @@
 #include <QTextStream>
 #include <QLabel>
 #include <QKeyEvent>
+#include <QIcon>
 #include "game.h"
 
 class Game;
@@ -27,6 +28,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+private slots:
+    void OnPushButtonClicked(bool checked);
 
 private:
     Ui::MainWindow *ui;

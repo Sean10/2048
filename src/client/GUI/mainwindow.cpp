@@ -13,13 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //InitQSS();
+    InitQSS();
     InitWidget();
 
-    //while(true)
-    //{
-        SetLabelWidgetAll();
-    //}
+
+    SetLabelWidgetAll();
 
 }
 
@@ -30,8 +28,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::InitWidget()
 {
+    QIcon *icon = new QIcon(":/img/2048.ico");
+    this->setWindowIcon(*icon);
+    this->setWindowTitle(tr("2048-Qt"));
+
     game_ = new Game;
-    ui->labelScore->setText("score:"+QString::number(game_->box->GetScore(), 10));
     game_->NewGame();
     is_game_over_ = false;
     //ui->label1_->setText(0);
@@ -109,6 +110,7 @@ void MainWindow::SetLabelWidgetAll()
     SetLabelWidget(13, ui->label14_);
     SetLabelWidget(14, ui->label15_);
     SetLabelWidget(15, ui->label16_);
+    ui->labelScore->setText("score:"+QString::number(game_->box->GetScore(), 10));
 
 }
 
@@ -145,4 +147,10 @@ void MainWindow::InitQSS()
     QString stylesheet = filetext.readAll();
     this->setStyleSheet(stylesheet);
     file.close();
+}
+
+void MainWindow::OnPushButtonClicked(bool checked)
+{
+    game_->NewGame();
+    is_game_over_ = false;
 }
