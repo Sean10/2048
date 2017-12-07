@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ReadSettings();
+
     InitQSS();
     InitWidget();
 
@@ -111,6 +113,7 @@ void MainWindow::SetLabelWidgetAll()
     SetLabelWidget(14, ui->label15_);
     SetLabelWidget(15, ui->label16_);
     ui->labelScore->setText("score:"+QString::number(game_->box->GetScore(), 10));
+    ui->labelBestScore->setText("score:"+QString::number(game_->box->GetBestScore(), 10));
 
 }
 
@@ -153,4 +156,21 @@ void MainWindow::OnPushButtonClicked(bool checked)
 {
     game_->NewGame();
     is_game_over_ = false;
+}
+
+void MainWindow::ReadSettings()
+{
+    QSettings setting("config.ini", QSettings::IniFormat);
+    int score;
+
+    score = setting.value("record").toInt();
+    game_->box->SetBestScore(score);
+}
+
+void MainWindow::WriteSettings()
+{
+    QSettings setting("config.ini", QSettings::IniFormat);
+    setting.beginGroup("data");
+    setting.setValue("record",game_->box->GetBestScore());
+    setting.endGroup();
 }

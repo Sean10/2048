@@ -285,6 +285,15 @@ int Box::GetScore()
     return score_;
 }
 
+int Box::GetBestScore()
+{
+    return best_score_;
+}
+
+int Box::SetBestScore(int best)
+{
+    best_score_ = best;
+}
 
 void Box::ClearBox()
 {

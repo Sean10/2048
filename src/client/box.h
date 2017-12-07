@@ -27,6 +27,8 @@ public:
     void SetRandomNums();
     int GetData(const int i);
     int GetScore();
+    int GetBestScore();
+    int SetBestScore(int best);
     void ClearBox();
 
 private:

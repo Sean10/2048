@@ -4,8 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += gui
-QT -= core
+QT += gui
+QT += sql
+QT += core
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 # CONFIG += console
@@ -31,15 +32,13 @@ SOURCES += main.cpp\
     box.cpp \
     game.cpp \
     console/console.cpp \
-    GUI/mainwindow.cpp \
-    database.cpp
+    GUI/mainwindow.cpp
 
 HEADERS  += box.h \
     definition.h \
     game.h \
     console/console.h \
     GUI/mainwindow.h \
-    database.h \
     ../sqlite3.h
 
 FORMS    += mainwindow.ui

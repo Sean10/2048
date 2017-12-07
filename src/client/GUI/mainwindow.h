@@ -12,6 +12,7 @@
 #include <QLabel>
 #include <QKeyEvent>
 #include <QIcon>
+#include <QSettings>
 #include "game.h"
 
 class Game;
@@ -42,6 +43,9 @@ private:
     void SetLabelWidget(const int i, QLabel *tmp);
     void SetLabelWidgetAll();
     void keyPressEvent(QKeyEvent *event);
+
+    void ReadSettings();
+    void WriteSettings();
 
 };
 

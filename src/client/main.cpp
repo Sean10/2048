@@ -23,6 +23,7 @@
 #include <QApplication>
 #include "definition.h"
 #include "console/console.h"
+#include "setting.h"
 
 int main(int argc, char *argv[])
 {
@@ -31,6 +32,8 @@ int main(int argc, char *argv[])
     //Console *console = new Console;
 
     w.show();
+    setting mine;
+
 
     return a.exec();
 }
