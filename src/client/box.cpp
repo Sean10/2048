@@ -12,9 +12,7 @@ Box::Box(QObject *parent) : QObject(parent)
         dat_[i] = 0;
     score_ = 0;
     // 这里要写存储游戏记录的内容
-    if(true)
-        best_score_ = 0;
-
+    best_score_ = 0;
 
     qsrand(NULL);
 }
@@ -290,9 +288,10 @@ int Box::GetBestScore()
     return best_score_;
 }
 
-int Box::SetBestScore(int best)
+void Box::SetBestScore(int best)
 {
-    best_score_ = best;
+    if(best > best_score_)
+        best_score_ = best;
 }
 
 void Box::ClearBox()
@@ -300,4 +299,10 @@ void Box::ClearBox()
     for(int i = 0;i < 16;i++)
         dat_[i] = 0;
     score_ = 0;
+}
+
+void Box::CompareBest()
+{
+    if(score_ > best_score_)
+        best_score_ = score_;
 }

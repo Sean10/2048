@@ -12,15 +12,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    ReadSettings();
-
     InitQSS();
     InitWidget();
-
-
     SetLabelWidgetAll();
 
+    //WriteSettings();
+    ReadSettings();
+
+    //this->setFocusPolicy(Qt::)
 }
 
 MainWindow::~MainWindow()
@@ -30,8 +29,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::InitWidget()
 {
-    QIcon *icon = new QIcon(":/img/2048.ico");
-    this->setWindowIcon(*icon);
+//    QIcon *icon = new QIcon(":/img/2048.ico");
+//    this->setWindowIcon(*icon);
     this->setWindowTitle(tr("2048-Qt"));
 
     game_ = new Game;
@@ -112,33 +111,39 @@ void MainWindow::SetLabelWidgetAll()
     SetLabelWidget(13, ui->label14_);
     SetLabelWidget(14, ui->label15_);
     SetLabelWidget(15, ui->label16_);
-    ui->labelScore->setText("score:"+QString::number(game_->box->GetScore(), 10));
-    ui->labelBestScore->setText("score:"+QString::number(game_->box->GetBestScore(), 10));
+    ui->labelScore->setText(QString::number(game_->box->GetScore(), 10));
+    ui->labelBestScore->setText(QString::number(game_->box->GetBestScore(), 10));
 
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
+    //DEBUG(event);
+    //qDebug()  << event;
     switch (event->key()) {
     case Qt::Key_Up:
+    case Qt::Key_W:
         game_->OperationUp();
         break;
     case Qt::Key_Down:
+    case Qt::Key_S:
         game_->OperationDown();
         break;
     case Qt::Key_Left:
+    case Qt::Key_A:
         game_->OpeartionLeft();
         break;
     case Qt::Key_Right:
+    case Qt::Key_D:
         game_->OperationRight();
         break;
     default:
         DEBUG("keyPressEvent");
-
     }
     SetLabelWidgetAll();
     if(game_->IsGameOverAndNewRandom())
         is_game_over_ = true;
+    //game_->IsGameOverAndNewRandom();
 }
 
 void MainWindow::InitQSS()
@@ -152,25 +157,55 @@ void MainWindow::InitQSS()
     file.close();
 }
 
-void MainWindow::OnPushButtonClicked(bool checked)
-{
-    game_->NewGame();
-    is_game_over_ = false;
-}
+//void MainWindow::OnPushButtonClicked(bool checked)
+//{
+////    if(!checked)
+////        return ;
+////    game_->NewGame();
+////    is_game_over_ = false;
+//    ;
+//}
 
 void MainWindow::ReadSettings()
 {
-    QSettings setting("config.ini", QSettings::IniFormat);
+    QSettings setting("sean10", "2048-Qt");
     int score;
-
-    score = setting.value("record").toInt();
+    setting.beginGroup("data");
+    if(setting.contains("record"))
+    {
+        score = setting.value("record").toInt();
+    }else
+        score = 0;
+    setting.endGroup();
     game_->box->SetBestScore(score);
+
 }
 
 void MainWindow::WriteSettings()
 {
-    QSettings setting("config.ini", QSettings::IniFormat);
+    QSettings setting("sean10", "2048-Qt");
     setting.beginGroup("data");
     setting.setValue("record",game_->box->GetBestScore());
     setting.endGroup();
+    setting.sync();
+}
+
+bool MainWindow::QuitDetermine()
+{
+    QMessageBox::StandardButton button = QMessageBox::warning(this, "Quit", "Determine to quit?", QMessageBox::Yes|QMessageBox::No);
+    if(button == QMessageBox::Yes)
+        return true;
+    else
+        return false;
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if(!QuitDetermine())
+        event->ignore();
+    else
+    {
+        WriteSettings();
+        event->accept();
+    }
 }

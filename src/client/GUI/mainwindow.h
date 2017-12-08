@@ -13,6 +13,8 @@
 #include <QKeyEvent>
 #include <QIcon>
 #include <QSettings>
+#include <QDebug>
+#include <QMessageBox>
 #include "game.h"
 
 class Game;
@@ -31,7 +33,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void OnPushButtonClicked(bool checked);
+    //void OnPushButtonClicked(bool checked);
 
 private:
     Ui::MainWindow *ui;
@@ -47,6 +49,8 @@ private:
     void ReadSettings();
     void WriteSettings();
 
+    void closeEvent(QCloseEvent *event);
+    bool QuitDetermine();
 };
 
 #endif // MAINWINDOW_H

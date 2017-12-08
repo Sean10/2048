@@ -35,24 +35,28 @@ bool Game::IsGameOverAndNewRandom()
 void Game::OpeartionLeft()
 {
     box->DataLeft();
+    box->CompareBest();
     //IsGameOverAndNewRandom();
 }
 
 void Game::OperationDown()
 {
     box->DataDown();
+    box->CompareBest();
     //IsGameOverAndNewRandom();
 }
 
 void Game::OperationRight()
 {
     box->DataRight();
+    box->CompareBest();
     //IsGameOverAndNewRandom();
 }
 
 void Game::OperationUp()
 {
     box->DataUp();
+    box->CompareBest();
     //IsGameOverAndNewRandom();
 }
 

@@ -28,8 +28,9 @@ public:
     int GetData(const int i);
     int GetScore();
     int GetBestScore();
-    int SetBestScore(int best);
+    void SetBestScore(int best);
     void ClearBox();
+    void CompareBest();
 
 private:
     int dat_[16];
