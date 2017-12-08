@@ -7,6 +7,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDialog>
 #include <QFile>
 #include <QTextStream>
 #include <QLabel>
@@ -18,7 +19,6 @@
 #include "game.h"
 
 class Game;
-
 
 namespace Ui {
 class MainWindow;
@@ -33,10 +33,12 @@ public:
     ~MainWindow();
 
 private slots:
-    //void OnPushButtonClicked(bool checked);
+    void OnPushButtonClicked(bool checked);
+    void DialogGameOverPushButton();
 
 private:
     Ui::MainWindow *ui;
+    QDialog* dialog;
     Game *game_;
     bool is_game_over_;
 
@@ -51,6 +53,7 @@ private:
 
     void closeEvent(QCloseEvent *event);
     bool QuitDetermine();
+    void GameOver();
 };
 
 #endif // MAINWINDOW_H

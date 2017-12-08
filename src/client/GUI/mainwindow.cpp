@@ -4,6 +4,7 @@
  *  Copyright (c) 2017
  */
 #include "mainwindow.h"
+#include "ui_dialoggameover.h"
 #include "ui_mainwindow.h"
 #include "definition.h"
 
@@ -142,8 +143,33 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     }
     SetLabelWidgetAll();
     if(game_->IsGameOverAndNewRandom())
+    {
         is_game_over_ = true;
+    }
+    if(is_game_over_)
+    {
+        GameOver();
+    }
     //game_->IsGameOverAndNewRandom();
+}
+
+void MainWindow::GameOver()
+{
+    dialog = new QDialog;
+    Ui::Dialog* ui_dialog_game_over = new Ui::Dialog;
+    ui_dialog_game_over->setupUi(dialog);
+    dialog->exec();
+    dialog->setWindowTitle("Game Over");
+
+
+    QObject::connect(ui_dialog_game_over->pushButton,SIGNAL(clicked()), this, SLOT(DialogGameOverPushButton()));
+}
+
+void MainWindow::DialogGameOverPushButton()
+{
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->close();
+    game_->NewGame();
 }
 
 void MainWindow::InitQSS()
@@ -157,14 +183,14 @@ void MainWindow::InitQSS()
     file.close();
 }
 
-//void MainWindow::OnPushButtonClicked(bool checked)
-//{
-////    if(!checked)
-////        return ;
-////    game_->NewGame();
-////    is_game_over_ = false;
-//    ;
-//}
+void MainWindow::OnPushButtonClicked(bool checked)
+{
+    if(!checked)
+        return ;
+    game_->NewGame();
+    is_game_over_ = false;
+    ;
+}
 
 void MainWindow::ReadSettings()
 {

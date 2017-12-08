@@ -41,7 +41,8 @@ HEADERS  += box.h \
     GUI/mainwindow.h \
     ../sqlite3.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialoggameover.ui
 
 RESOURCES += \
     qrc.qrc
